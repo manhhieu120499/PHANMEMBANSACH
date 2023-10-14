@@ -1,0 +1,21 @@
+package ui;
+
+import javax.swing.JFrame;
+
+public class GUI_TrangChu extends JFrame{
+	 /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public GUI_TrangChu() {
+		   init();
+	   }
+	   
+	   public void init() {
+		   setSize(1000, 800);
+		   setTitle("Phần Mềm Quản Lý Hiệu Sách HBDK");
+		   setDefaultCloseOperation(EXIT_ON_CLOSE);
+		   setLocationRelativeTo(null);
+	   }
+}
