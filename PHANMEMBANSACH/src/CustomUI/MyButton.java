@@ -1,0 +1,46 @@
+package CustomUI;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.UIManager;
+
+public class MyButton extends JButton implements MouseListener{
+	public MyButton(String title) {
+		super(title);
+		this.setFocusPainted(false);
+		this.setBorder(null);
+		this.addMouseListener(this);
+		this.setBorder(BorderFactory.createLineBorder(Color.black, 1, true));
+		this.setBackground(Color.WHITE);
+		this.setFont(new Font("Segoe UI", Font.BOLD, 15));
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+//		this.setBackground(new Color(255,165,0));
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+//		this.setBackground(new ViewDangNhap().mauChuDao);
+	}
+}
