@@ -11,7 +11,7 @@ import javax.swing.border.EmptyBorder;
 
 import CustomUI.CustumImage;
 import CustomUI.MyButton;
-import CustomUI.RoundedBorder;
+import controller.XuLyDieuHuongPhamMem;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -21,14 +21,30 @@ import java.awt.Component;
 import javax.swing.UIManager;
 import javax.swing.border.BevelBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.Image;
 
 public class TrangChu extends JFrame {
 
-	/**
-	 * Launch the application.
-	 */
+	private String indexFrame = "Trang chủ";
+	private JLabel lblAvtNhanVien;
+	private JLabel lblTenNhanVien;
+	private MyButton btnTrangChu;
+	private MyButton btnBanHang;
+	private MyButton btnGiaoHang;
+	private MyButton btnDoiTraHang;
+	private MyButton btnNhaCungCap;
+	private MyButton btnKhuyenMai;
+	private MyButton btnSanPham;
+	private MyButton btnKhachHang;
+	private MyButton btnNhanVien;
+	private MyButton btnThongKe;
+	private MyButton btnHoTro;
+	private Color colorBtnActive = new Color(10, 110, 227);
+	private JPanel pnlHienTai;
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -65,81 +81,214 @@ public class TrangChu extends JFrame {
 		pnlSideBar.setLayout(null);
 
 		int widthLblAvtNhanVien = 130;
-		JLabel lblAvtNhanVien = new JLabel(new CustumImage().taoHinhTronAvt("src\\image\\avtemployee\\avt.jpg", widthLblAvtNhanVien));
+		lblAvtNhanVien = new JLabel(new CustumImage().taoHinhTronAvt("src\\image\\avtemployee\\avt.jpg", widthLblAvtNhanVien));
 		lblAvtNhanVien.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblAvtNhanVien.setBounds(60, 20, widthLblAvtNhanVien, widthLblAvtNhanVien);
 		pnlSideBar.add(lblAvtNhanVien);
 
-		JLabel lblNewLabel = new JLabel("Nguyễn Trọng Đạt");
-		lblNewLabel.setBounds(10, 150, 230, 50);
-		lblNewLabel.setHorizontalAlignment(JLabel.CENTER);
-		lblNewLabel.setFont(new Font("Segoe UI", Font.BOLD, 20));
-		pnlSideBar.add(lblNewLabel);
+		lblTenNhanVien = new JLabel("Nguyễn Trọng Đạt");
+		lblTenNhanVien.setBounds(10, 150, 230, 50);
+		lblTenNhanVien.setHorizontalAlignment(JLabel.CENTER);
+		lblTenNhanVien.setFont(new Font("Segoe UI", Font.BOLD, 20));
+		pnlSideBar.add(lblTenNhanVien);
 
-		JButton btnTrangChu = new MyButton("Trang chủ");
+		btnTrangChu = new MyButton("Trang chủ");
 		btnTrangChu.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\icontrangchu.png"));
-		btnTrangChu.setBackground(new Color(255, 255, 255));
+		btnTrangChu.setBackground(colorBtnActive);
+		btnTrangChu.setForeground(Color.white);
 		btnTrangChu.setBounds(30, 211, 192, 39);
 		pnlSideBar.add(btnTrangChu);
 
-		MyButton btnTrangChu_1 = new MyButton("Bán hàng");
-		btnTrangChu_1.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconmuahang.png"));
-		btnTrangChu_1.setBackground(Color.WHITE);
-		btnTrangChu_1.setBounds(30, 261, 192, 39);
-		pnlSideBar.add(btnTrangChu_1);
+		btnBanHang = new MyButton("Bán hàng");
+		btnBanHang.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconmuahang.png"));
+		btnBanHang.setBackground(Color.WHITE);
+		btnBanHang.setBounds(30, 261, 192, 39);
+		pnlSideBar.add(btnBanHang);
 
-		MyButton btnTrangChu_1_1 = new MyButton("Giao hàng");
-		btnTrangChu_1_1.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\icongiaohang.png"));
-		btnTrangChu_1_1.setBackground(Color.WHITE);
-		btnTrangChu_1_1.setBounds(30, 310, 192, 39);
-		pnlSideBar.add(btnTrangChu_1_1);
+		btnGiaoHang = new MyButton("Giao hàng");
+		btnGiaoHang.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\icongiaohang.png"));
+		btnGiaoHang.setBackground(Color.WHITE);
+		btnGiaoHang.setBounds(30, 310, 192, 39);
+		pnlSideBar.add(btnGiaoHang);
 
-		MyButton btnTrangChu_1_2 = new MyButton("Đổi trả hàng");
-		btnTrangChu_1_2.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\icondoitra.png"));
-		btnTrangChu_1_2.setBackground(Color.WHITE);
-		btnTrangChu_1_2.setBounds(30, 357, 192, 39);
-		pnlSideBar.add(btnTrangChu_1_2);
+		btnDoiTraHang = new MyButton("Đổi trả hàng");
+		btnDoiTraHang.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\icondoitra.png"));
+		btnDoiTraHang.setBackground(Color.WHITE);
+		btnDoiTraHang.setBounds(30, 357, 192, 39);
+		pnlSideBar.add(btnDoiTraHang);
 
-		MyButton btnTrangChu_1_3 = new MyButton("QL Nhà Cung Cấp");
-		btnTrangChu_1_3.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconncc.png"));
-		btnTrangChu_1_3.setBackground(Color.WHITE);
-		btnTrangChu_1_3.setBounds(30, 406, 192, 39);
-		pnlSideBar.add(btnTrangChu_1_3);
+		btnNhaCungCap = new MyButton("QL Nhà Cung Cấp");
+		btnNhaCungCap.setText("QL Nhà cung cấp");
+		btnNhaCungCap.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconncc.png"));
+		btnNhaCungCap.setBackground(Color.WHITE);
+		btnNhaCungCap.setBounds(30, 406, 192, 39);
+		pnlSideBar.add(btnNhaCungCap);
 
-		MyButton btnTrangChu_1_4 = new MyButton("QL Khuyến Mãi");
-		btnTrangChu_1_4.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconkhuyenmai.png"));
-		btnTrangChu_1_4.setBackground(Color.WHITE);
-		btnTrangChu_1_4.setBounds(30, 455, 192, 39);
-		pnlSideBar.add(btnTrangChu_1_4);
+		btnKhuyenMai = new MyButton("QL Khuyến Mãi");
+		btnKhuyenMai.setText("QL Khuyến mãi");
+		btnKhuyenMai.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconkhuyenmai.png"));
+		btnKhuyenMai.setBackground(Color.WHITE);
+		btnKhuyenMai.setBounds(30, 455, 192, 39);
+		pnlSideBar.add(btnKhuyenMai);
 
-		MyButton btnTrangChu_1_5 = new MyButton("QL Sản phẩm");
-		btnTrangChu_1_5.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconsanpham.png"));
-		btnTrangChu_1_5.setBackground(Color.WHITE);
-		btnTrangChu_1_5.setBounds(30, 504, 192, 39);
-		pnlSideBar.add(btnTrangChu_1_5);
+		btnSanPham = new MyButton("QL Sản phẩm");
+		btnSanPham.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconsanpham.png"));
+		btnSanPham.setBackground(Color.WHITE);
+		btnSanPham.setBounds(30, 504, 192, 39);
+		pnlSideBar.add(btnSanPham);
 
-		MyButton btnTrangChu_1_6 = new MyButton("QL Khách hàng");
-		btnTrangChu_1_6.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconkhachhang.png"));
-		btnTrangChu_1_6.setBackground(Color.WHITE);
-		btnTrangChu_1_6.setBounds(30, 553, 192, 39);
-		pnlSideBar.add(btnTrangChu_1_6);
+		btnKhachHang = new MyButton("QL Khách hàng");
+		btnKhachHang.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconkhachhang.png"));
+		btnKhachHang.setBackground(Color.WHITE);
+		btnKhachHang.setBounds(30, 553, 192, 39);
+		pnlSideBar.add(btnKhachHang);
 
-		MyButton btnTrangChu_1_7 = new MyButton("QL Nhân viên");
-		btnTrangChu_1_7.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconnhanvien.png"));
-		btnTrangChu_1_7.setBackground(Color.WHITE);
-		btnTrangChu_1_7.setBounds(30, 602, 192, 39);
-		pnlSideBar.add(btnTrangChu_1_7);
+		btnNhanVien = new MyButton("QL Nhân viên");
+		btnNhanVien.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconnhanvien.png"));
+		btnNhanVien.setBackground(Color.WHITE);
+		btnNhanVien.setBounds(30, 602, 192, 39);
+		pnlSideBar.add(btnNhanVien);
 
-		MyButton btnTrangChu_1_8 = new MyButton("QL Thống kê");
-		btnTrangChu_1_8.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconthongke.png"));
-		btnTrangChu_1_8.setBackground(Color.WHITE);
-		btnTrangChu_1_8.setBounds(30, 651, 192, 39);
-		pnlSideBar.add(btnTrangChu_1_8);
+		btnThongKe = new MyButton("QL Thống kê");
+		btnThongKe.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconthongke.png"));
+		btnThongKe.setBackground(Color.WHITE);
+		btnThongKe.setBounds(30, 651, 192, 39);
+		pnlSideBar.add(btnThongKe);
 
-		MyButton btnTrangChu_1_9 = new MyButton("Hỗ trợ");
-		btnTrangChu_1_9.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconhotro.png"));
-		btnTrangChu_1_9.setBackground(Color.WHITE);
-		btnTrangChu_1_9.setBounds(30, 702, 192, 39);
-		pnlSideBar.add(btnTrangChu_1_9);
+		btnHoTro = new MyButton("Hỗ trợ");
+		btnHoTro.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconhotro.png"));
+		btnHoTro.setBackground(Color.WHITE);
+		btnHoTro.setBounds(30, 702, 192, 39);
+		pnlSideBar.add(btnHoTro);
+
+//		phần thêm sự kiện cho các nút điều hướng
+		XuLyDieuHuongPhamMem xuLyDieuHuong = new XuLyDieuHuongPhamMem(this);
+		btnTrangChu.addActionListener(xuLyDieuHuong);
+		btnBanHang.addActionListener(xuLyDieuHuong);
+		btnGiaoHang.addActionListener(xuLyDieuHuong);
+		btnDoiTraHang.addActionListener(xuLyDieuHuong);
+		btnNhaCungCap.addActionListener(xuLyDieuHuong);
+		btnKhuyenMai.addActionListener(xuLyDieuHuong);
+		btnSanPham.addActionListener(xuLyDieuHuong);
+		btnKhachHang.addActionListener(xuLyDieuHuong);
+		btnNhanVien.addActionListener(xuLyDieuHuong);
+		btnThongKe.addActionListener(xuLyDieuHuong);
+		btnHoTro.addActionListener(xuLyDieuHuong);
+		
+		pnlHienTai = new GUITrangChu();
+		getContentPane().add(pnlHienTai);
+	}
+
+	// Đặt lại màu nền trắng cho tất cả các button control
+	public void datLaiMauNenChoButtonControll() {
+		if(indexFrame.equals("Trang chủ")) {
+			btnTrangChu.setBackground(Color.WHITE);
+			btnTrangChu.setForeground(Color.BLACK);
+		}
+		if(indexFrame.equals("Bán hàng")) {
+			btnBanHang.setBackground(Color.WHITE);
+			btnBanHang.setForeground(Color.BLACK);
+		}
+		if(indexFrame.equals("Giao hàng")) {
+			btnGiaoHang.setBackground(Color.WHITE);
+			btnGiaoHang.setForeground(Color.BLACK);
+		}
+		if(indexFrame.equals("Đổi trả hàng")) {
+			btnDoiTraHang.setBackground(Color.WHITE);
+			btnDoiTraHang.setForeground(Color.BLACK);
+		}
+		if(indexFrame.equals("QL Nhà cung cấp")) {
+			btnNhaCungCap.setBackground(Color.WHITE);
+			btnNhaCungCap.setForeground(Color.BLACK);
+		}
+		if(indexFrame.equals("QL Khuyến mãi")) {
+			btnKhuyenMai.setBackground(Color.WHITE);
+			btnKhuyenMai.setForeground(Color.BLACK);
+		}
+		if(indexFrame.equals("QL Sản phẩm")) {
+			btnSanPham.setBackground(Color.WHITE);
+			btnSanPham.setForeground(Color.BLACK);
+		}
+		if(indexFrame.equals("QL Khách hàng")) {
+			btnKhachHang.setBackground(Color.WHITE);
+			btnKhachHang.setForeground(Color.BLACK);
+		} 
+		if(indexFrame.equals("QL Nhân viên")) {
+			btnNhanVien.setBackground(Color.WHITE);
+			btnNhanVien.setForeground(Color.BLACK);
+		} 
+		if(indexFrame.equals("QL Thống kê")) {
+			btnThongKe.setBackground(Color.WHITE);
+			btnThongKe.setForeground(Color.BLACK);
+		} 
+		if(indexFrame.equals("Hỗ trợ")) {
+			btnHoTro.setBackground(Color.WHITE);
+			btnHoTro.setForeground(Color.BLACK);
+		}
+	}
+	// phần sử lý điều hướng ứng dụng
+	public void xuLyDieuHuong(String src) {
+		datLaiMauNenChoButtonControll();
+		indexFrame = src;
+		this.remove(pnlHienTai);
+		if(src.equals("Trang chủ")) {
+			pnlHienTai = new GUITrangChu();
+			btnTrangChu.setBackground(colorBtnActive);
+			btnTrangChu.setForeground(Color.white);
+		}
+		if(src.equals("Bán hàng")) {
+			pnlHienTai = new GUIBanHang();
+			btnBanHang.setBackground(colorBtnActive);
+			btnBanHang.setForeground(Color.white);
+		}
+		if(src.equals("Giao hàng")) {
+			pnlHienTai = new GUIGiaoHang();
+			btnGiaoHang.setBackground(colorBtnActive);
+			btnGiaoHang.setForeground(Color.white);
+		}
+		if(src.equals("Đổi trả hàng")) {
+			pnlHienTai = new GUIDoiTraHang();
+			btnDoiTraHang.setBackground(colorBtnActive);
+			btnDoiTraHang.setForeground(Color.white);
+		}
+		if(src.equals("QL Nhà cung cấp")) {
+			pnlHienTai = new GUINhaCungCap();
+			btnNhaCungCap.setBackground(colorBtnActive);
+			btnNhaCungCap.setForeground(Color.white);
+		}
+		if(src.equals("QL Khuyến mãi")) {
+			pnlHienTai = new GUIKhuyenMai();
+			btnKhuyenMai.setBackground(colorBtnActive);
+			btnKhuyenMai.setForeground(Color.white);
+		}
+		if(src.equals("QL Sản phẩm")) {
+			pnlHienTai = new GUISanPham();
+			btnSanPham.setBackground(colorBtnActive);
+			btnSanPham.setForeground(Color.white);
+		}
+		if(src.equals("QL Khách hàng")) {
+			pnlHienTai = new GUIKhachHang();
+			btnKhachHang.setBackground(colorBtnActive);
+			btnKhachHang.setForeground(Color.white);
+		} 
+		if(src.equals("QL Nhân viên")) {
+			pnlHienTai = new GUINhanVien();
+			btnNhanVien.setBackground(colorBtnActive);
+			btnNhanVien.setForeground(Color.white);
+		} 
+		if(src.equals("QL Thống kê")) {
+			pnlHienTai = new GUIThongKe();
+			btnThongKe.setBackground(colorBtnActive);
+			btnThongKe.setForeground(Color.white);
+		} 
+		if(src.equals("Hỗ trợ")) {
+			pnlHienTai = new GUIHoTro();
+			btnHoTro.setBackground(colorBtnActive);
+			btnHoTro.setForeground(Color.white);
+		}
+		this.add(pnlHienTai);
+		this.revalidate();
+		this.repaint();
 	}
 }
+

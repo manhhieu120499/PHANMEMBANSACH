@@ -57,7 +57,7 @@ public class MyButton extends JButton implements MouseListener{
 
     @Override
     protected void paintBorder(Graphics g) {
-        g.setColor(getForeground());
+        g.setColor(Color.black);
         g.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 15, 15);
     }
 }
