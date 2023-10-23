@@ -10,9 +10,10 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import CustomUI.CustumImage;
-import CustomUI.MyButton;
+import CustomUI.ButtonSidebar;
 import controller.XuLyDieuHuongPhamMem;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Color;
@@ -25,23 +26,24 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.Image;
+import javax.swing.SwingConstants;
 
 public class TrangChu extends JFrame {
 
 	private String indexFrame = "Trang chủ";
 	private JLabel lblAvtNhanVien;
 	private JLabel lblTenNhanVien;
-	private MyButton btnTrangChu;
-	private MyButton btnBanHang;
-	private MyButton btnGiaoHang;
-	private MyButton btnDoiTraHang;
-	private MyButton btnNhaCungCap;
-	private MyButton btnKhuyenMai;
-	private MyButton btnSanPham;
-	private MyButton btnKhachHang;
-	private MyButton btnNhanVien;
-	private MyButton btnThongKe;
-	private MyButton btnHoTro;
+	private ButtonSidebar btnTrangChu;
+	private ButtonSidebar btnBanHang;
+	private ButtonSidebar btnGiaoHang;
+	private ButtonSidebar btnDoiTraHang;
+	private ButtonSidebar btnNhaCungCap;
+	private ButtonSidebar btnKhuyenMai;
+	private ButtonSidebar btnSanPham;
+	private ButtonSidebar btnKhachHang;
+	private ButtonSidebar btnNhanVien;
+	private ButtonSidebar btnThongKe;
+	private ButtonSidebar btnHoTro;
 	private Color colorBtnActive = new Color(10, 110, 227);
 	private JPanel pnlHienTai;
 
@@ -77,6 +79,7 @@ public class TrangChu extends JFrame {
 		JPanel pnlSideBar = new JPanel();
 		pnlSideBar.setBackground(new Color(97, 166, 247));
 		pnlSideBar.setBounds(0, 0, 250, 777);
+		pnlSideBar.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		getContentPane().add(pnlSideBar);
 		pnlSideBar.setLayout(null);
 
@@ -92,70 +95,70 @@ public class TrangChu extends JFrame {
 		lblTenNhanVien.setFont(new Font("Segoe UI", Font.BOLD, 20));
 		pnlSideBar.add(lblTenNhanVien);
 
-		btnTrangChu = new MyButton("Trang chủ");
+		btnTrangChu = new ButtonSidebar("Trang chủ");
 		btnTrangChu.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\icontrangchu.png"));
 		btnTrangChu.setBackground(colorBtnActive);
 		btnTrangChu.setForeground(Color.white);
 		btnTrangChu.setBounds(30, 211, 192, 39);
 		pnlSideBar.add(btnTrangChu);
 
-		btnBanHang = new MyButton("Bán hàng");
+		btnBanHang = new ButtonSidebar("Bán hàng");
 		btnBanHang.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconmuahang.png"));
 		btnBanHang.setBackground(Color.WHITE);
 		btnBanHang.setBounds(30, 261, 192, 39);
 		pnlSideBar.add(btnBanHang);
 
-		btnGiaoHang = new MyButton("Giao hàng");
+		btnGiaoHang = new ButtonSidebar("Giao hàng");
 		btnGiaoHang.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\icongiaohang.png"));
 		btnGiaoHang.setBackground(Color.WHITE);
 		btnGiaoHang.setBounds(30, 310, 192, 39);
 		pnlSideBar.add(btnGiaoHang);
 
-		btnDoiTraHang = new MyButton("Đổi trả hàng");
+		btnDoiTraHang = new ButtonSidebar("Đổi trả hàng");
 		btnDoiTraHang.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\icondoitra.png"));
 		btnDoiTraHang.setBackground(Color.WHITE);
 		btnDoiTraHang.setBounds(30, 357, 192, 39);
 		pnlSideBar.add(btnDoiTraHang);
 
-		btnNhaCungCap = new MyButton("QL Nhà Cung Cấp");
+		btnNhaCungCap = new ButtonSidebar("QL Nhà Cung Cấp");
 		btnNhaCungCap.setText("QL Nhà cung cấp");
 		btnNhaCungCap.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconncc.png"));
 		btnNhaCungCap.setBackground(Color.WHITE);
 		btnNhaCungCap.setBounds(30, 406, 192, 39);
 		pnlSideBar.add(btnNhaCungCap);
 
-		btnKhuyenMai = new MyButton("QL Khuyến Mãi");
+		btnKhuyenMai = new ButtonSidebar("QL Khuyến Mãi");
 		btnKhuyenMai.setText("QL Khuyến mãi");
 		btnKhuyenMai.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconkhuyenmai.png"));
 		btnKhuyenMai.setBackground(Color.WHITE);
 		btnKhuyenMai.setBounds(30, 455, 192, 39);
 		pnlSideBar.add(btnKhuyenMai);
 
-		btnSanPham = new MyButton("QL Sản phẩm");
+		btnSanPham = new ButtonSidebar("QL Sản phẩm");
 		btnSanPham.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconsanpham.png"));
 		btnSanPham.setBackground(Color.WHITE);
 		btnSanPham.setBounds(30, 504, 192, 39);
 		pnlSideBar.add(btnSanPham);
 
-		btnKhachHang = new MyButton("QL Khách hàng");
+		btnKhachHang = new ButtonSidebar("QL Khách hàng");
 		btnKhachHang.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconkhachhang.png"));
 		btnKhachHang.setBackground(Color.WHITE);
 		btnKhachHang.setBounds(30, 553, 192, 39);
 		pnlSideBar.add(btnKhachHang);
 
-		btnNhanVien = new MyButton("QL Nhân viên");
+		btnNhanVien = new ButtonSidebar("QL Nhân viên");
 		btnNhanVien.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconnhanvien.png"));
 		btnNhanVien.setBackground(Color.WHITE);
 		btnNhanVien.setBounds(30, 602, 192, 39);
 		pnlSideBar.add(btnNhanVien);
 
-		btnThongKe = new MyButton("QL Thống kê");
+		btnThongKe = new ButtonSidebar("QL Thống kê");
 		btnThongKe.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconthongke.png"));
 		btnThongKe.setBackground(Color.WHITE);
 		btnThongKe.setBounds(30, 651, 192, 39);
 		pnlSideBar.add(btnThongKe);
 
-		btnHoTro = new MyButton("Hỗ trợ");
+		btnHoTro = new ButtonSidebar("Hỗ trợ");
 		btnHoTro.setIcon(new ImageIcon("src\\image\\iconcontrolbtntrangchu\\iconhotro.png"));
 		btnHoTro.setBackground(Color.WHITE);
 		btnHoTro.setBounds(30, 702, 192, 39);
@@ -286,7 +289,7 @@ public class TrangChu extends JFrame {
 			btnHoTro.setBackground(colorBtnActive);
 			btnHoTro.setForeground(Color.white);
 		}
-		this.add(pnlHienTai);
+		getContentPane().add(pnlHienTai);
 		this.revalidate();
 		this.repaint();
 	}
