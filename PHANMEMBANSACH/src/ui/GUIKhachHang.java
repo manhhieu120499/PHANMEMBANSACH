@@ -13,7 +13,7 @@ import java.awt.Font;
 public class GUIKhachHang extends JPanel {
 	public GUIKhachHang() {
 		setBackground(new Color(240, 240, 240));
-		this.setBounds(250, 0, 1250, 800);
+//		this.setBounds(250, 0, 1250, 800);
 		setLayout(null);
 		
 		JPanel panel = new JPanel();
