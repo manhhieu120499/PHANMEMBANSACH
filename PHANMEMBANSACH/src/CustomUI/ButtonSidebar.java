@@ -1,15 +1,19 @@
 package CustomUI;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Insets;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.UIManager;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
 
 public class ButtonSidebar extends JButton implements MouseListener{
 	public ButtonSidebar(String title) {
@@ -45,20 +49,5 @@ public class ButtonSidebar extends JButton implements MouseListener{
 	public void mouseExited(MouseEvent e) {
 //		this.setBackground(new ViewDangNhap().mauChuDao);
 	}
-	@Override
-    protected void paintComponent(Graphics g) {
-        if (getModel().isArmed()) {
-            g.setColor(Color.lightGray);
-        } else {
-            g.setColor(getBackground());
-        }
-        g.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
-        super.paintComponent(g);
-    }
-
-    @Override
-    protected void paintBorder(Graphics g) {
-        g.setColor(Color.black);
-        g.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 15, 15);
-    }
+	
 }
