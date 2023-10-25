@@ -65,12 +65,12 @@ public class TrangChu extends JFrame {
 	 */
 	public TrangChu() {
 		this.setTitle("PHẦN MỀM QUẢN LÝ NHÀ SÁCH");
-		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1500, 800);
+		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.getContentPane().setLayout(null);
+//		this.getContentPane().setLayout(null);
 		//xét logo
 		ImageIcon logoFrame = new ImageIcon(new ImageIcon("src\\image\\logodangnhap\\logo.png").getImage()
 				.getScaledInstance(70, 70, Image.SCALE_SMOOTH));
@@ -78,9 +78,10 @@ public class TrangChu extends JFrame {
 
 		JPanel pnlSideBar = new JPanel();
 		pnlSideBar.setBackground(new Color(97, 166, 247));
-		pnlSideBar.setBounds(0, 0, 250, 777);
+//		pnlSideBar.setBounds(0, 0, 250, 777);
+		pnlSideBar.setPreferredSize(new Dimension(250, 0));
 		pnlSideBar.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		getContentPane().add(pnlSideBar);
+		getContentPane().add(pnlSideBar, BorderLayout.WEST);
 		pnlSideBar.setLayout(null);
 
 		int widthLblAvtNhanVien = 130;
@@ -178,8 +179,8 @@ public class TrangChu extends JFrame {
 		btnThongKe.addActionListener(xuLyDieuHuong);
 		btnHoTro.addActionListener(xuLyDieuHuong);
 		
-		pnlHienTai = new GUIKhachHang();
-		getContentPane().add(pnlHienTai);
+		pnlHienTai = new GUITrangChu();
+		getContentPane().add(pnlHienTai, BorderLayout.CENTER);
 	}
 
 	// Đặt lại màu nền trắng cho tất cả các button control

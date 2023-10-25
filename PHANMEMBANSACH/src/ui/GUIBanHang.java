@@ -10,7 +10,7 @@ import javax.swing.JTabbedPane;
 public class GUIBanHang extends JPanel {
 	public GUIBanHang() {
 		this.setBackground(new Color(255, 255, 255));
-		this.setBounds(250, 0, 1250, 800);
+//		this.setBounds(250, 0, 1250, 800);
 		setLayout(null);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
