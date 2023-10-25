@@ -1,6 +1,0 @@
-package connect;
-
-public class ConnectDB {
-    public static Connect connection = null;
-    public Con 
-}
