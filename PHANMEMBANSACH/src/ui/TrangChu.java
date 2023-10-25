@@ -178,7 +178,7 @@ public class TrangChu extends JFrame {
 		btnThongKe.addActionListener(xuLyDieuHuong);
 		btnHoTro.addActionListener(xuLyDieuHuong);
 		
-		pnlHienTai = new GUITrangChu();
+		pnlHienTai = new GUIKhachHang();
 		getContentPane().add(pnlHienTai);
 	}
 
