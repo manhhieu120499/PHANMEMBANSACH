@@ -1,0 +1,134 @@
+package entity;
+
+import java.util.Objects;
+
+public class DonGiaoHang {
+	private String maDonGiaoHang;
+	private String tenKhachHang;
+	private String sdt;
+	private String diaChi;
+	private int soKg;
+	private boolean trangThai;
+	private float soKm;
+	private NhanVien nhanVien;
+
+	public DonGiaoHang(String maDonGiaoHang, String tenKhachHang, String sdt, String diaChi, int soKg,
+			boolean trangThai, NhanVien nhanVien) {
+		super();
+		this.maDonGiaoHang = maDonGiaoHang;
+		this.tenKhachHang = tenKhachHang;
+		this.sdt = sdt;
+		this.diaChi = diaChi;
+		this.soKg = soKg;
+		this.trangThai = trangThai;
+		this.nhanVien = nhanVien;
+	}
+
+	public String getMaDonGiaoHang() {
+		return maDonGiaoHang;
+	}
+
+	public void setMaDonGiaoHang(String maDonGiaoHang) {
+		this.maDonGiaoHang = maDonGiaoHang;
+	}
+
+	public String getTenKhachHang() {
+		return tenKhachHang;
+	}
+
+	public void setTenKhachHang(String tenKhachHang) {
+		this.tenKhachHang = tenKhachHang;
+	}
+
+	public String getSdt() {
+		return sdt;
+	}
+
+	public void setSdt(String sdt) {
+		this.sdt = sdt;
+	}
+
+	public String getDiaChi() {
+		return diaChi;
+	}
+
+	public void setDiaChi(String diaChi) {
+		this.diaChi = diaChi;
+	}
+
+	public int getSoKg() {
+		return soKg;
+	}
+
+	public void setSoKg(int soKg) {
+		this.soKg = soKg;
+	}
+
+	public boolean isTrangThai() {
+		return trangThai;
+	}
+
+	public void setTrangThai(boolean trangThai) {
+		this.trangThai = trangThai;
+	}
+
+	public float getSoKm() {
+		return soKm;
+	}
+
+	public NhanVien getNhanVien() {
+		return nhanVien;
+	}
+
+	public void setNhanVien(NhanVien nhanVien) {
+		this.nhanVien = nhanVien;
+	}
+	
+	public float tinhSoKm() {
+		
+		// tính số km gọi bằng google map
+		this.soKm = 1;
+		return this.soKm;
+	}
+	
+	public float tinhTienVanChuyen() {
+		float result = 0;
+		if(soKm < 40) {
+			return -1;
+		}else {
+			if(soKg <= 50) {
+				result = soKm * 3000;
+			}else if( soKg <= 100) {
+				result = 50 * 3000 + (soKg - 50) * 5000;
+			}else if(soKg <= 150){
+				result = 50 * 3000 + 100 * 5000 + (soKg - 100) * 7000;
+			}
+		}
+		return result;
+	}
+	
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(maDonGiaoHang);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DonGiaoHang other = (DonGiaoHang) obj;
+		return Objects.equals(maDonGiaoHang, other.maDonGiaoHang);
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+
+}

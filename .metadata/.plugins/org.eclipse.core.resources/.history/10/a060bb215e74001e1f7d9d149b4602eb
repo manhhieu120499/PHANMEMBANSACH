@@ -1,0 +1,56 @@
+package ui;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
+import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
+
+import CustomUI.MyButton;
+import CustomUI.MyCombobox;
+import CustomUI.MyTable;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.LineBorder;
+
+public class GUIKhuyenMai extends JPanel {
+	private DefaultTableModel modelKMDAP, modelKMDT, modelDSKhuyenMai, modelChiTietKM;
+	public GUIKhuyenMai() {
+		this.setBackground(new Color(255, 255, 255));
+		this.setBounds(250, 0, 1250, 800);
+		setLayout(null);
+		
+		modelKMDT = new DefaultTableModel(new Object[] {"STT", "Danh mục", "Thể loại", "Phần trăm"}, 0);
+		
+		modelKMDAP = new DefaultTableModel(new Object[] {"STT", "Danh mục", "Thể loại", "Phần trăm"}, 0);
+		
+		modelDSKhuyenMai = new DefaultTableModel(new Object[] {"STT", "MaCTKM", "TenCTKM", "Vô hiệu hóa"}, 0);
+		
+		modelChiTietKM = new DefaultTableModel(new Object[] {"Danh mục", "Thể loại", "Phần trăm"}, 0);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel_2.setBounds(20, 0, 1245, 789);
+		add(panel_2);
+		panel_2.setLayout(null);
+		
+		
+		
+		
+		
+		
+//		JButton btnNewButton = new JButton("Đây là khuyến mãi");
+//		this.add(btnNewButton, BorderLayout.CENTER);
+	}
+}

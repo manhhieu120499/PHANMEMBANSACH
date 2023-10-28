@@ -1,0 +1,34 @@
+package entity;
+
+public class VanPhongPham {
+	private String chatLieu;
+	private DanhMuc danhMuc;
+
+	public VanPhongPham(String chatLieu, DanhMuc danhMuc) {
+		super();
+		this.chatLieu = chatLieu;
+		this.danhMuc = danhMuc;
+	}
+
+	public String getChatLieu() {
+		return chatLieu;
+	}
+
+	public void setChatLieu(String chatLieu) {
+		this.chatLieu = chatLieu;
+	}
+
+	public DanhMuc getDanhMuc() {
+		return danhMuc;
+	}
+
+	public void setDanhMuc(DanhMuc danhMuc) {
+		this.danhMuc = danhMuc;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+}

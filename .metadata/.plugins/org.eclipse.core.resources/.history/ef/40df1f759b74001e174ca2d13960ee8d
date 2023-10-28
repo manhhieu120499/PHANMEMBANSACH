@@ -1,0 +1,6 @@
+package entity;
+
+public class ChuongTrinhKhuyenMai {
+   private String maCTKM;
+   private String tenCTKM;
+}
