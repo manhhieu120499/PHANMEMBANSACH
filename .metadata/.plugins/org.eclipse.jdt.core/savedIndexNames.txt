@@ -1,5 +1,4 @@
 INDEX VERSION 1.134+E:\PHANMEMBANSACH\.metadata\.plugins\org.eclipse.jdt.core
-1174133270.index
 2307592096.index
 1865797976.index
 569099916.index

@@ -18,7 +18,7 @@ import CustomUI.CustumImage;
 public class GUITrangChu extends JPanel {
 	public GUITrangChu() {
 		this.setBackground(new Color(255, 255, 255));
-//		this.setBounds(250, 0, 1250, 800);
+		this.setBounds(250, 0, 1250, 800);
 		this.setLayout(null);
 		JLabel lblBgr = new JLabel(new ImageIcon("src\\image\\imagepanel\\hinhnentrangchu.jpg"));
 		lblBgr.setBounds(0, 0, 1250, 800);

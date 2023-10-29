@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+<<<<<<< HEAD
+    <fullyQualifiedTypeName name="java.awt.event.FocusEvent"/>
+    <fullyQualifiedTypeName name="javax.swing.table.TableCellRenderer"/>
+    <fullyQualifiedTypeName name="javax.swing.table.DefaultTableCellRenderer"/>
+    <fullyQualifiedTypeName name="javax.swing.SwingConstants"/>
+    <fullyQualifiedTypeName name="CustomUI.MauCacDongTrongBang"/>
+    <fullyQualifiedTypeName name="CustomUI.MyCombobox"/>
+    <fullyQualifiedTypeName name="CustomUI.MyButton"/>
+    <fullyQualifiedTypeName name="java.lang.invoke.ClassSpecializer.Factory"/>
+    <fullyQualifiedTypeName name="javax.swing.border.Border"/>
+    <fullyQualifiedTypeName name="javax.swing.BorderFactory"/>
+    <fullyQualifiedTypeName name="javax.swing.border.BevelBorder"/>
+    <fullyQualifiedTypeName name="org.jfree.chart.plot.PlotOrientation"/>
+    <fullyQualifiedTypeName name="org.jfree.data.category.DefaultCategoryDataset"/>
+    <fullyQualifiedTypeName name="java.awt.Color"/>
+    <fullyQualifiedTypeName name="org.jfree.chart.JFreeChart"/>
+    <fullyQualifiedTypeName name="org.jfree.chart.ChartFactory"/>
+    <fullyQualifiedTypeName name="org.jfree.data.category.CategoryDataset"/>
+    <fullyQualifiedTypeName name="org.jfree.data.general.DefaultPieDataset"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="org.jfree.data.general.PieDataset"/>
+    <fullyQualifiedTypeName name="org.jfree.chart.ChartPanel"/>
+    <fullyQualifiedTypeName name="javax.swing.JTable"/>
+    <fullyQualifiedTypeName name="CustomUI.MyTable"/>
+    <fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
+    <fullyQualifiedTypeName name="javax.swing.JFrame"/>
+    <fullyQualifiedTypeName name="java.awt.Dimension"/>
+    <fullyQualifiedTypeName name="com.github.sarxos.webcam.WebcamResolution"/>
+    <fullyQualifiedTypeName name="com.github.sarxos.webcam.Webcam"/>
+    <fullyQualifiedTypeName name="com.github.sarxos.webcam.WebcamPanel"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.ThreadFactory"/>
+    <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
+    <fullyQualifiedTypeName name="java.util.logging.Logger"/>
+    <fullyQualifiedTypeName name="testQRcode.testQRcode"/>
+    <fullyQualifiedTypeName name="java.util.logging.Level"/>
+    <fullyQualifiedTypeName name="com.google.zxing.Result"/>
+    <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
+    <fullyQualifiedTypeName name="com.google.zxing.LuminanceSource"/>
+    <fullyQualifiedTypeName name="com.google.zxing.client.j2se.BufferedImageLuminanceSource"/>
+    <fullyQualifiedTypeName name="com.google.zxing.BinaryBitmap"/>
+    <fullyQualifiedTypeName name="com.google.zxing.common.HybridBinarizer"/>
+    <fullyQualifiedTypeName name="com.google.zxing.MultiFormatReader"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.Executor"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
+=======
     <fullyQualifiedTypeName name="javax.swing.JPanel"/>
     <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
@@ -23,4 +69,5 @@
     <fullyQualifiedTypeName name="entity.ChiTietHoaDon"/>
     <fullyQualifiedTypeName name="entity.SanPham"/>
     <fullyQualifiedTypeName name="entity.MucKhuyenMai"/>
+>>>>>>> 515f39b4fe00012f3c49c3b4e01157276e5d86ee
 </qualifiedTypeNameHistroy>

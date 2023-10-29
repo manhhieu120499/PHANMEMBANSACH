@@ -1,0 +1,119 @@
+package testQRcode;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.image.BufferedImage;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.swing.SwingConstants;
+
+import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.WebcamPanel;
+import com.github.sarxos.webcam.WebcamResolution;
+import com.google.zxing.BinaryBitmap;
+import com.google.zxing.LuminanceSource;
+import com.google.zxing.MultiFormatReader;
+import com.google.zxing.NotFoundException;
+import com.google.zxing.Result;
+import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
+import com.google.zxing.common.HybridBinarizer;
+
+import java.awt.Color;
+
+public class testQRcode extends JFrame implements Runnable,ThreadFactory{
+	
+	private WebcamPanel panel = null;
+	private Webcam webcam = null;
+	private JPanel panel_1;
+	private JLabel lblNewLabel;
+	private Executor executor = Executors.newSingleThreadExecutor(this);
+	
+public static void main(String[] args) {
+	testQRcode testQR = new testQRcode();
+	testQR.setVisible(true);
+}
+public testQRcode() {
+	getContentPane().setLayout(null);
+	this.setSize(882, 632);
+	JPanel panel = new JPanel();
+	panel.setBackground(new Color(255, 255, 255));
+	panel.setBounds(80, 53, 682, 472);
+	getContentPane().add(panel);
+	panel.setLayout(null);
+    panel_1 = new JPanel();
+	panel_1.setBounds(53, 47, 579, 255);
+	panel.add(panel_1);
+	panel_1.setLayout(null);
+	
+	lblNewLabel = new JLabel("MaQR\r\n");
+	lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+	lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
+	lblNewLabel.setBounds(48, 355, 584, 35);
+	panel.add(lblNewLabel);
+	// TODO Auto-generated constructor stub
+	initWebCam();
+}
+private void initWebCam() {
+	Dimension size = WebcamResolution.QVGA.getSize();
+	webcam = Webcam.getWebcams().get(0);
+	webcam.setViewSize(size);
+	
+	panel = new WebcamPanel(webcam);
+	panel.setSize(579, 255);
+	panel.setPreferredSize(size);
+	panel.setFPSDisplayed(true);
+	panel_1.add(panel);
+	executor.execute(this);
+}
+@Override
+public Thread newThread(Runnable r) {
+	// TODO Auto-generated method stub
+	Thread t = new Thread(r,"My Thread");
+	t.setDaemon(true);
+	
+	return t;
+}
+@Override
+public void run() {
+	// TODO Auto-generated method stub
+	do {
+		try {
+			Thread.sleep(100);
+		}catch (InterruptedException ex) {
+			Logger.getLogger(testQRcode.class.getName()).log(Level.SEVERE,null,ex);
+		}
+		Result result = null;
+		BufferedImage image = null;
+		
+		if(webcam.isOpen()) {
+			if((image = webcam.getImage())==null) {
+				continue;
+			}
+		}
+		
+		LuminanceSource source = new BufferedImageLuminanceSource(image);
+		BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
+		
+		try {
+			result = new MultiFormatReader().decode(bitmap);
+		} catch (NotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(result != null) {
+			lblNewLabel.setText(result.getText());
+		}
+	}while(true);
+	
+}
+	
+}
+
