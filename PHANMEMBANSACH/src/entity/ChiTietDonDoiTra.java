@@ -29,14 +29,14 @@ public class ChiTietDonDoiTra {
 		this.sanPham = sanPham;
 	}
 	
-	public float tinhThanhTien() {
-		
-		return this.getSanPham().getGiaBan()*soLuongTra*(1+this.getSanPham().getThue());
+	public float tinhThanhTien(int giaBan) {
+		// giá bán lấy từ bên chi tiết hóa đơn bán hàng
+		return giaBan*soLuongTra*(1+this.getSanPham().getThue());
+	}
+	@Override
+	public String toString() {
+		return "ChiTietDonDoiTra [soLuongTra=" + soLuongTra + ", lyDo=" + lyDo + ", sanPham=" + sanPham + "]";
 	}
     
-    @Override
-    public String toString() {
-    	// TODO Auto-generated method stub
-    	return super.toString();
-    }
+    
 }
