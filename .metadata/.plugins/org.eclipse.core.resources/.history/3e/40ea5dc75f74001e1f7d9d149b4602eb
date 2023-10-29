@@ -1,0 +1,157 @@
+package ui;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
+import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
+
+import CustomUI.MyButton;
+import CustomUI.MyCombobox;
+import CustomUI.MyTable;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
+
+public class GUIKhuyenMai extends JPanel {
+	private DefaultTableModel modelKMDAP, modelKMDT, modelDSKhuyenMai, modelChiTietKM;
+	private JTextField textField;
+	private JTextField textField_1;
+	private MyTable tbMucKhuyenMai;
+	public GUIKhuyenMai() {
+		this.setBackground(new Color(255, 255, 255));
+		this.setBounds(250, 0, 1250, 800);
+		setLayout(null);
+		
+		modelKMDT = new DefaultTableModel(new Object[] {"STT", "Tên mục khuyến mãi", "Phần trăm"}, 0);
+		
+//		modelKMDAP = new DefaultTableModel(new Object[] {"STT", "Danh mục", "Thể loại", "Phần trăm"}, 0);
+		
+		modelDSKhuyenMai = new DefaultTableModel(new Object[] {"STT", "MaCTKM", "TenCTKM", "Vô hiệu hóa"}, 0);
+		
+		modelChiTietKM = new DefaultTableModel(new Object[] {"Tên mục khuyến mãi", "Phần trăm"}, 0);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel_2.setBounds(26, 0, 1245, 789);
+		add(panel_2);
+		panel_2.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 11, 549, 778);
+		panel_2.add(panel);
+		panel.setLayout(null);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(107, 11, 361, 40);
+		panel.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Chương trình khuyến mãi");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(54, 7, 245, 24);
+		panel_1.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("MaCTKM:");
+		lblNewLabel_1.setBounds(42, 80, 78, 14);
+		panel.add(lblNewLabel_1);
+		
+		textField = new JTextField();
+		textField.setBounds(153, 77, 315, 20);
+		panel.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("TenCTKM:");
+		lblNewLabel_2.setBounds(42, 120, 62, 14);
+		panel.add(lblNewLabel_2);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBackground(new Color(192, 192, 192));
+		textArea.setBounds(153, 121, 315, 53);
+		panel.add(textArea);
+		
+		JButton btnNewButton = new JButton("Lưu");
+		btnNewButton.setBounds(379, 202, 89, 23);
+		panel.add(btnNewButton);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBorder(new TitledBorder(null, "T\u1EA1o m\u1EE5c khuy\u1EBFn m\u00E3i", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_3.setBounds(30, 256, 500, 522);
+		panel.add(panel_3);
+		panel_3.setLayout(null);
+		
+		JLabel lblNewLabel_3 = new JLabel("Danh mục:");
+		lblNewLabel_3.setBounds(34, 38, 63, 14);
+		panel_3.add(lblNewLabel_3);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(169, 34, 235, 22);
+		panel_3.add(comboBox);
+		
+		JLabel lblNewLabel_4 = new JLabel("Phần trăm:");
+		lblNewLabel_4.setBounds(34, 86, 63, 14);
+		panel_3.add(lblNewLabel_4);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(169, 83, 235, 20);
+		panel_3.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JLabel lblNewLabel_5 = new JLabel("Thể loại:");
+		lblNewLabel_5.setBounds(34, 137, 63, 14);
+		panel_3.add(lblNewLabel_5);
+		
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setBounds(169, 133, 235, 22);
+		panel_3.add(comboBox_1);
+		
+		JButton btnNewButton_1 = new JButton("Xóa trắng");
+		
+		btnNewButton_1.setBounds(107, 187, 89, 23);
+		panel_3.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Thêm ");
+		btnNewButton_2.setBounds(290, 187, 89, 23);
+		panel_3.add(btnNewButton_2);
+		
+		
+		tbMucKhuyenMai = new MyTable(modelKMDT);
+		JScrollPane scrollPaneMKM = new JScrollPane(tbMucKhuyenMai, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		scrollPaneMKM.setBounds(24, 255, 452, 256);
+		panel_3.add(scrollPaneMKM);
+		
+		JLabel lblNewLabel_6 = new JLabel("Danh sách các mục khuyến mãi");
+		lblNewLabel_6.setBounds(24, 230, 187, 14);
+		panel_3.add(lblNewLabel_6);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBounds(579, 0, 644, 219);
+		panel_2.add(panel_4);
+		panel_4.setLayout(null);
+		
+		JPanel panel_5 = new JPanel();
+		panel_5.setBounds(22, 11, 148, 32);
+		panel_4.add(panel_5);
+		panel_5.setLayout(null);
+		
+		JLabel lblNewLabel_7 = new JLabel("Tìm kiếm");
+		lblNewLabel_7.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNewLabel_7.setBounds(37, 11, 73, 14);
+		panel_5.add(lblNewLabel_7);
+		
+//		JButton btnNewButton = new JButton("Đây là khuyến mãi");
+//		this.add(btnNewButton, BorderLayout.CENTER);
+	}
+}

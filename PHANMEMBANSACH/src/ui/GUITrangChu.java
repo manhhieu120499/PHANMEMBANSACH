@@ -24,7 +24,7 @@ public class GUITrangChu extends JPanel {
 		lblBgr.setBounds(0, 0, 1250, 800);
 		this.add(lblBgr);
 		JLabel lblBgrTrangChu = new JLabel();
-		lblBgrTrangChu.setBounds(29, 22, 1183, 625);
+		lblBgrTrangChu.setBounds(29, 22, 1230, 625);
 		lblBgrTrangChu.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 //		lấy hình gốc
 		ImageIcon iconLblBgr = new ImageIcon("src\\image\\imagepanel\\hinhnentrangchu.jpg");

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+<<<<<<< HEAD
     <fullyQualifiedTypeName name="java.awt.event.FocusEvent"/>
     <fullyQualifiedTypeName name="javax.swing.table.TableCellRenderer"/>
     <fullyQualifiedTypeName name="javax.swing.table.DefaultTableCellRenderer"/>
@@ -44,4 +45,29 @@
     <fullyQualifiedTypeName name="java.lang.Thread"/>
     <fullyQualifiedTypeName name="java.util.concurrent.Executor"/>
     <fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
+=======
+    <fullyQualifiedTypeName name="javax.swing.JPanel"/>
+    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="javax.swing.table.DefaultTableModel"/>
+    <fullyQualifiedTypeName name="java.awt.Color"/>
+    <fullyQualifiedTypeName name="javax.swing.JScrollBar"/>
+    <fullyQualifiedTypeName name="entity.TaiKhoan"/>
+    <fullyQualifiedTypeName name="entity.NhaCungaCap"/>
+    <fullyQualifiedTypeName name="entity.DanhMuc"/>
+    <fullyQualifiedTypeName name="CustomUI.MyTable"/>
+    <fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
+    <fullyQualifiedTypeName name="CustomUI.MyButton"/>
+    <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
+    <fullyQualifiedTypeName name="CustomUI.MyCombobox"/>
+    <fullyQualifiedTypeName name="java.awt.Dimension"/>
+    <fullyQualifiedTypeName name="javax.swing.JTable"/>
+    <fullyQualifiedTypeName name="entity.ChuongTrinhKhuyenMai"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="entity.ChiTietDonDoiTra"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="entity.ChiTietHoaDon"/>
+    <fullyQualifiedTypeName name="entity.SanPham"/>
+    <fullyQualifiedTypeName name="entity.MucKhuyenMai"/>
+>>>>>>> 515f39b4fe00012f3c49c3b4e01157276e5d86ee
 </qualifiedTypeNameHistroy>

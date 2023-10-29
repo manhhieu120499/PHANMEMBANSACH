@@ -1,0 +1,19 @@
+package entity;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+public class HoaDon {
+   private String maHoaDon;
+   private LocalDate ngayLap;
+   private String hinhThucThanhToan;
+   private String ghiChu;
+   private int diemGiamGia;
+   private float giamGia;
+   private NhanVien nhanVien;
+   private KhachHang khachHang;
+   private ChuongTrinhKhuyenMai ctkm;
+   private ArrayList<ChiTietHoaDon> dsChiTietHoaDon = new ArrayList<>();
+   
+   
+}
