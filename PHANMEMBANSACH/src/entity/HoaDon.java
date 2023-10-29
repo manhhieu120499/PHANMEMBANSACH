@@ -2,7 +2,6 @@ package entity;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Objects;
 
 public class HoaDon {
@@ -135,7 +134,7 @@ public class HoaDon {
 	public float tinhTongTien() {
 		float result = 0;
 		for (ChiTietHoaDon cthd : dsChiTietHoaDon) {
-			result += cthd.getSanPham().getGiaBan()* cthd.getSoLuongMua()*(1 + cthd.getSanPham().getThue());
+			result += cthd.tinhThanhTien();
 		}
 		return result;
 	}
@@ -169,7 +168,11 @@ public class HoaDon {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "HoaDon [maHoaDon=" + maHoaDon + ", ngayLap=" + ngayLap + ", hinhThucThanhToan=" + hinhThucThanhToan
+				+ ", ghiChu=" + ghiChu + ", diemGiamGia=" + diemGiamGia + ", giamGia=" + giamGia + ", nhanVien="
+				+ nhanVien + ", khachHang=" + khachHang + ", ctkm=" + ctkm + ", dsChiTietHoaDon=" + dsChiTietHoaDon
+				+ "]";
 	}
+
+	
 }
