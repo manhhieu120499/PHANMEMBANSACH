@@ -176,8 +176,12 @@ public class DonGiaoHang {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "DonGiaoHang [maDonGiaoHang=" + maDonGiaoHang + ", tenKhachHang=" + tenKhachHang + ", sdt=" + sdt
+				+ ", diaChi=" + diaChi + ", soKg=" + soKg + ", trangThai=" + trangThai + ", soKm=" + soKm + ", ghiChu="
+				+ ghiChu + ", tienVanChuyen=" + tienVanChuyen + ", nhanVienGiaoHang=" + nhanVienGiaoHang
+				+ ", nhanVienLapHoaDon=" + nhanVienLapHoaDon + ", hoaDon=" + hoaDon + "]";
 	}
+
+	
 
 }

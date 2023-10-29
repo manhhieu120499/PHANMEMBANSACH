@@ -28,7 +28,8 @@ public class MucKhuyenMai {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "MucKhuyenMai [tenMucKhuyenMai=" + tenMucKhuyenMai + ", tiLeKhuyenMai=" + tiLeKhuyenMai + "]";
 	}
+
+	
 }

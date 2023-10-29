@@ -60,7 +60,9 @@ public class ChuongTrinhKhuyenMai {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "ChuongTrinhKhuyenMai [maCTKM=" + maCTKM + ", tenCTKM=" + tenCTKM + ", dsMucKhuyenMai=" + dsMucKhuyenMai
+				+ "]";
 	}
+
+	
 }

@@ -176,6 +176,7 @@ public class GUIGiaoHang extends JPanel implements ActionListener{
 			panel_4.add(lblNewLabel_4);
 			
 			JTextArea txtArea = new JTextArea();
+			txtArea.setEditable(false);
 			txtArea.setBackground(new Color(192, 192, 192));
 			txtArea.setBounds(133, 137, 240, 49);
 			panel_4.add(txtArea);

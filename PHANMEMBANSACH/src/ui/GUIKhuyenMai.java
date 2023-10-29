@@ -28,7 +28,7 @@ import java.awt.Component;
 import javax.swing.ScrollPaneConstants;
 
 public class GUIKhuyenMai extends JPanel {
-	private DefaultTableModel modelKMDAP, modelKMDT, modelDSKhuyenMai, modelChiTietKM;
+	private DefaultTableModel modelKMDT, modelDSKhuyenMai, modelChiTietKM;
 	private JTextField textField;
 	private JTextField textField_1;
 	private MyTable tbMucKhuyenMai, tbDSKhuyenMai, tbChiTietKM;
@@ -63,11 +63,13 @@ public class GUIKhuyenMai extends JPanel {
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(97, 166, 247));
 		panel_1.setBounds(60, 11, 433, 40);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Chương trình khuyến mãi");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(89, 7, 245, 24);
@@ -78,6 +80,7 @@ public class GUIKhuyenMai extends JPanel {
 		panel.add(lblNewLabel_1);
 		
 		textField = new JTextField();
+		textField.setEditable(false);
 		textField.setBounds(153, 62, 315, 20);
 		panel.add(textField);
 		textField.setColumns(10);
@@ -149,17 +152,18 @@ public class GUIKhuyenMai extends JPanel {
 		
 		tbMucKhuyenMai = new MyTable(modelKMDT);
 		JScrollPane scrollPaneMKM = new JScrollPane(tbMucKhuyenMai, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		scrollPaneMKM.setBounds(24, 255, 452, 256);
+		scrollPaneMKM.setBounds(24, 255, 452, 246);
 		panel_3.add(scrollPaneMKM);
-		
-		JLabel lblNewLabel_6 = new JLabel("Danh sách các mục khuyến mãi đang tạo");
-		lblNewLabel_6.setBounds(24, 230, 223, 14);
-		panel_3.add(lblNewLabel_6);
 		
 		JLabel lblNewLabel_8 = new JLabel("Tạo tên mục khuyến mãi");
 		lblNewLabel_8.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel_8.setBounds(34, 11, 187, 20);
 		panel_3.add(lblNewLabel_8);
+		
+		JPanel panel_9 = new JPanel();
+		panel_9.setBorder(new TitledBorder(null, "Danh s\u00E1ch c\u00E1c m\u1EE5c khuy\u1EBFn m\u00E3i \u0111ang t\u1EA1o", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_9.setBounds(10, 234, 480, 278);
+		panel_3.add(panel_9);
 		
 		JLabel lblNewLabel_13 = new JLabel("Trạng thái:");
 		lblNewLabel_13.setBounds(42, 157, 78, 14);
@@ -172,6 +176,12 @@ public class GUIKhuyenMai extends JPanel {
 		panel.add(txtChapDng);
 		txtChapDng.setColumns(10);
 		
+		MyButton mbtnToMCtkm = new MyButton("Lưu");
+		mbtnToMCtkm.setText("Tạo mã CTKM");
+		mbtnToMCtkm.setBackground(new Color(97, 166, 247));
+		mbtnToMCtkm.setBounds(203, 183, 120, 30);
+		panel.add(mbtnToMCtkm);
+		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(new Color(255, 255, 255));
 		panel_4.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -180,12 +190,13 @@ public class GUIKhuyenMai extends JPanel {
 		panel_4.setLayout(null);
 		
 		JPanel panel_5 = new JPanel();
-		panel_5.setBackground(new Color(240, 240, 240));
+		panel_5.setBackground(new Color(97, 166, 247));
 		panel_5.setBounds(22, 11, 148, 40);
 		panel_4.add(panel_5);
 		panel_5.setLayout(null);
 		
 		JLabel lblNewLabel_7 = new JLabel("Tìm kiếm");
+		lblNewLabel_7.setForeground(new Color(255, 255, 255));
 		lblNewLabel_7.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNewLabel_7.setBounds(37, 7, 73, 24);
 		panel_5.add(lblNewLabel_7);
@@ -215,6 +226,7 @@ public class GUIKhuyenMai extends JPanel {
 		panel_7.add(textField_3);
 		
 		JPanel panel_6 = new JPanel();
+		panel_6.setBackground(new Color(255, 255, 255));
 		panel_6.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_6.setBounds(580, 184, 655, 594);
 		panel_2.add(panel_6);
@@ -231,7 +243,7 @@ public class GUIKhuyenMai extends JPanel {
 		
 		tbChiTietKM = new MyTable(modelChiTietKM);
 		JScrollPane scrollPaneCTKM = new JScrollPane(tbChiTietKM, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		scrollPaneCTKM.setBounds(10, 387, 635, 196);
+		scrollPaneCTKM.setBounds(10, 418, 635, 165);
 		panel_6.add(scrollPaneCTKM);
 		
 		JPanel panel_8 = new JPanel();
@@ -246,6 +258,10 @@ public class GUIKhuyenMai extends JPanel {
 		
 		MyCombobox cboMucKM = new MyCombobox();
 		cboMucKM.setBounds(175, 22, 156, 22);
+		cboMucKM.addItem("Sách giáo khoa");
+		cboMucKM.addItem("Sách tham khảo");
+		cboMucKM.addItem("Bút");
+		cboMucKM.addItem("Thước");
 		panel_8.add(cboMucKM);
 		
 		JLabel lblNewLabel_12 = new JLabel("Lọc theo trạng thái");
@@ -256,6 +272,7 @@ public class GUIKhuyenMai extends JPanel {
 		cboTrangThai.setBounds(175, 64, 156, 22);
 		cboTrangThai.addItem("Đang áp dụng");
 		cboTrangThai.addItem("Chưa áp dụng");
+		cboTrangThai.addItem("Tất cả");
 		panel_8.add(cboTrangThai);
 		
 		 btnApDungCT = new MyButton("Áp dụng chương trình khuyến mãi");
@@ -268,6 +285,10 @@ public class GUIKhuyenMai extends JPanel {
 		btnNewButton.setBounds(311, 349, 30, 30);
 		btnNewButton.setIcon(new ImageIcon("src\\image\\giaohang\\iconarrowdown.png"));
 		panel_6.add(btnNewButton);
+		
+		JLabel lblNewLabel_6 = new JLabel("Chi tiết chương trình khuyến mãi");
+		lblNewLabel_6.setBounds(10, 395, 237, 13);
+		panel_6.add(lblNewLabel_6);
 		
 		
 //		JButton btnNewButton = new JButton("Đây là khuyến mãi");

@@ -41,7 +41,8 @@ public class Sach extends SanPham {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "Sach [tacGia=" + tacGia + ", nhaXuatBan=" + nhaXuatBan + ", namXuatBan=" + namXuatBan + "]";
 	}
+
+	
 }

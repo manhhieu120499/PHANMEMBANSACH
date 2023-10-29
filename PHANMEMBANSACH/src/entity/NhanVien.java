@@ -105,8 +105,10 @@ public class NhanVien {
 		return Objects.equals(maNhanVien, other.maNhanVien);
 	}
 	@Override
-    public String toString() {
-    	// TODO Auto-generated method stub
-    	return super.toString();
-    }
+	public String toString() {
+		return "NhanVien [maNhanVien=" + maNhanVien + ", tenNhanVien=" + tenNhanVien + ", sdt=" + sdt + ", email="
+				+ email + ", gioiTinh=" + gioiTinh + ", diaChi=" + diaChi + ", chucVu=" + chucVu + ", cCCD=" + cCCD
+				+ ", hinhAnh=" + hinhAnh + ", taiKhoan=" + taiKhoan + "]";
+	}
+	
 }

@@ -79,7 +79,9 @@ public class KhachHang {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "KhachHang [maKhachHang=" + maKhachHang + ", tenKhachHang=" + tenKhachHang + ", sdt=" + sdt + ", email="
+				+ email + ", diemTichLuy=" + diemTichLuy + "]";
 	}
+
+	
 }

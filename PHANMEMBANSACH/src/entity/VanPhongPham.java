@@ -31,8 +31,9 @@ public class VanPhongPham extends SanPham {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "VanPhongPham [chatLieu=" + chatLieu + ", danhMuc=" + danhMuc + "]";
 	}
+
+	
 
 }

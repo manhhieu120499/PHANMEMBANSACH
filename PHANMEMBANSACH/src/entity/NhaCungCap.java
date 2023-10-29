@@ -69,7 +69,9 @@ public class NhaCungCap {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "NhaCungCap [maNhaCungCap=" + maNhaCungCap + ", tenNhaCungCap=" + tenNhaCungCap + ", sdt=" + sdt
+				+ ", email=" + email + "]";
 	}
+
+	
 }

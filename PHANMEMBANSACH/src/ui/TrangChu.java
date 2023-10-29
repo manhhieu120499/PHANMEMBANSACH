@@ -4,14 +4,18 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import CustomUI.CustumImage;
+import connect.ConnectDB;
 import CustomUI.ButtonSidebar;
 import controller.XuLyDieuHuongPhamMem;
+import dao.DAONhanVien;
+import entity.NhanVien;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -29,7 +33,7 @@ import java.awt.Image;
 import javax.swing.SwingConstants;
 
 public class TrangChu extends JFrame {
-
+    
 	private String indexFrame = "Trang chủ";
 	private JLabel lblAvtNhanVien;
 	private JLabel lblTenNhanVien;
@@ -46,13 +50,28 @@ public class TrangChu extends JFrame {
 	private ButtonSidebar btnHoTro;
 	private Color colorBtnActive = new Color(10, 110, 227);
 	private JPanel pnlHienTai;
+	private static DAONhanVien dao_NhanVien = new DAONhanVien();
 
 	public static void main(String[] args) {
+		// kết nối database
+//		try {
+//			ConnectDB.getInstance().connect();
+//			System.out.println("Kết nối thành công");
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}
+		
+		ArrayList<NhanVien> ds = new ArrayList<>();
+		ds = dao_NhanVien.getDSNhanVien();
+		for(NhanVien nv : ds) {
+			System.out.println(nv.toString());
+		}
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					TrangChu frame = new TrangChu();
 					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
