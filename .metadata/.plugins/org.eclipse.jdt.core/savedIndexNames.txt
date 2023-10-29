@@ -1,15 +1,6 @@
-INDEX VERSION 1.132+D:\Hoc_Tap\Nam3_Ki1\PTUD\BaiTapLon\PHANMEMBANSACH - Copy\.metadata\.plugins\org.eclipse.jdt.core
-3366334456.index
-1414503203.index
-2921786454.index
-992431171.index
+INDEX VERSION 1.132+D:\Hoc_Tap\Nam3_Ki1\PTUD\BaiTapLon\PHANMEMBANSACH\.metadata\.plugins\org.eclipse.jdt.core
 1657330681.index
-822014157.index
 569099916.index
-4289589403.index
-1174133270.index
-433968432.index
+1414503203.index
 1865797976.index
-2871984818.index
-2442659350.index
-2220906794.index
+3366334456.index
