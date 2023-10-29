@@ -373,7 +373,7 @@ public class GUIGiaoHang extends JPanel implements ActionListener{
 			
 	
 			
-			
+			// ghi chu
 			// tab quản lý giao hàng
 			pnlQuanLyDonHang = new JPanel();
 			pnlQuanLyDonHang.setBackground(new Color(255, 255, 255));
