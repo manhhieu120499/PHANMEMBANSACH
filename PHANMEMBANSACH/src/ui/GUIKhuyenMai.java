@@ -44,6 +44,7 @@ public class GUIKhuyenMai extends JPanel {
 		
 		modelKMDT = new DefaultTableModel(new Object[] {"STT", "Tên mục khuyến mãi", "Phần trăm"}, 0);
 		
+		// ghi chu
 //		modelKMDAP = new DefaultTableModel(new Object[] {"STT", "Danh mục", "Thể loại", "Phần trăm"}, 0);
 		
 		modelDSKhuyenMai = new DefaultTableModel(new Object[] {"STT", "MaCTKM", "TenCTKM", "Trạng thái"}, 0);
