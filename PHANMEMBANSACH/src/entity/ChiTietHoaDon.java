@@ -37,12 +37,13 @@ public class ChiTietHoaDon {
 	}
 	
 	public float tinhThanhTien() {
-		return giaBan * soLuongMua;
+		return giaBan * soLuongMua * (1 + sanPham.getThue());
 	}
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "ChiTietHoaDon [soLuongMua=" + soLuongMua + ", giaBan=" + giaBan + ", sanPham=" + sanPham + "]";
 	}
+
+	
 }
