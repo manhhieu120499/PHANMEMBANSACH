@@ -1,0 +1,55 @@
+package testQRcode;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+
+import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.WebcamPanel;
+import com.github.sarxos.webcam.WebcamResolution;
+
+public class testQRcode extends JFrame{
+	
+	private WebcamPanel panel = null;
+	private Webcam webcam = null;
+	private JPanel panel_1;
+	
+public static void main(String[] args) {
+	testQRcode testQR = new testQRcode();
+	testQR.setVisible(true);
+}
+public testQRcode() {
+	getContentPane().setLayout(null);
+	this.setSize(882, 632);
+	JPanel panel = new JPanel();
+	panel.setBounds(57, 58, 682, 472);
+	getContentPane().add(panel);
+	panel.setLayout(null);
+	
+ panel_1 = new JPanel();
+	panel_1.setBounds(53, 47, 579, 255);
+	panel.add(panel_1);
+	panel_1.setLayout(null);
+	
+	JLabel lblNewLabel = new JLabel("MaQR\r\n");
+	lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+	lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
+	lblNewLabel.setBounds(48, 355, 584, 35);
+	panel.add(lblNewLabel);
+	// TODO Auto-generated constructor stub
+}
+private void initWebCam() {
+	Dimension size = WebcamResolution.QVGA.getSize();
+	webcam = Webcam.getWebcams().get(0);
+	webcam.setViewSize(size);
+	
+	panel = new WebcamPanel(webcam);
+	panel.setPreferredSize(size);
+	panel.setFPSDisplayed(true);
+	panel_1.add(panel);
+}
+}

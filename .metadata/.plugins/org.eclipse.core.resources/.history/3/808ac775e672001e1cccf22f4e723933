@@ -1,0 +1,34 @@
+package ui;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+
+public class GUIThongKe extends JPanel {
+	public GUIThongKe() {
+		this.setBackground(new Color(240, 240, 240));
+		this.setBounds(250, 0, 1250, 800);
+		setLayout(null);
+		
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBackground(new Color(255, 255, 255));
+		tabbedPane.setBounds(0, 0, 1250, 800);
+		add(tabbedPane);
+		
+		JPanel pnlCaNhan = new JPanel();
+		pnlCaNhan.setBackground(new Color(240, 240, 240));
+		tabbedPane.addTab("Cá nhân", null, pnlCaNhan, null);
+		
+		JPanel pnlCuaHang = new JPanel();
+		tabbedPane.addTab("Cửa hàng", null, pnlCuaHang, null);
+	
+	}
+}

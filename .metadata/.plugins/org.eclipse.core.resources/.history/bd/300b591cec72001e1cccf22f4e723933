@@ -1,0 +1,82 @@
+package ui;
+
+
+import java.awt.Color;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JScrollPane;
+public class GuiTK extends JPanel {
+	public GuiTK() {
+		this.setBackground(new Color(240, 240, 240));
+		this.setBounds(250, 0, 1250, 800);
+		setLayout(null);
+		
+		JPanel pnlThongKeTrongNgay = new JPanel();
+		pnlThongKeTrongNgay.setLayout(null);
+		pnlThongKeTrongNgay.setBackground(Color.WHITE);
+		pnlThongKeTrongNgay.setBounds(10, 29, 1210, 242);
+		add(pnlThongKeTrongNgay);
+		
+		JPanel pnlSoHoaDon = new JPanel();
+		pnlSoHoaDon.setLayout(null);
+		pnlSoHoaDon.setBounds(23, 73, 260, 140);
+		pnlThongKeTrongNgay.add(pnlSoHoaDon);
+		
+		JPanel pnlDoanhThu = new JPanel();
+		pnlDoanhThu.setLayout(null);
+		pnlDoanhThu.setBounds(322, 73, 260, 140);
+		pnlThongKeTrongNgay.add(pnlDoanhThu);
+		
+		JPanel pnlSoLuongSP = new JPanel();
+		pnlSoLuongSP.setLayout(null);
+		pnlSoLuongSP.setBounds(618, 73, 260, 140);
+		pnlThongKeTrongNgay.add(pnlSoLuongSP);
+		
+		JPanel pnlSoLuongDoiTra = new JPanel();
+		pnlSoLuongDoiTra.setLayout(null);
+		pnlSoLuongDoiTra.setBounds(916, 73, 260, 140);
+		pnlThongKeTrongNgay.add(pnlSoLuongDoiTra);
+		
+		JLabel lblThongKeTrongNgay = new JLabel("Thống kê trong ngày");
+		lblThongKeTrongNgay.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblThongKeTrongNgay.setBounds(23, 23, 200, 20);
+		pnlThongKeTrongNgay.add(lblThongKeTrongNgay);
+		
+		JPanel pnlThongKeTrongTuan = new JPanel();
+		pnlThongKeTrongTuan.setLayout(null);
+		pnlThongKeTrongTuan.setBackground(Color.WHITE);
+		pnlThongKeTrongTuan.setBounds(10, 284, 631, 505);
+		add(pnlThongKeTrongTuan);
+		
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBounds(20, 93, 588, 390);
+		pnlThongKeTrongTuan.add(panel);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		comboBox.setBounds(374, 38, 228, 24);
+		pnlThongKeTrongTuan.add(comboBox);
+		
+		JLabel lblThongKeTrongNgay_1 = new JLabel("Thống kê trong tuần");
+		lblThongKeTrongNgay_1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblThongKeTrongNgay_1.setBounds(23, 38, 200, 20);
+		pnlThongKeTrongTuan.add(lblThongKeTrongNgay_1);
+		
+		JPanel pnlThongKeDanhSachHoaDon = new JPanel();
+		pnlThongKeDanhSachHoaDon.setLayout(null);
+		pnlThongKeDanhSachHoaDon.setBackground(Color.WHITE);
+		pnlThongKeDanhSachHoaDon.setBounds(660, 284, 560, 505);
+		add(pnlThongKeDanhSachHoaDon);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(24, 74, 515, 405);
+		pnlThongKeDanhSachHoaDon.add(scrollPane);
+	
+	}
+}
